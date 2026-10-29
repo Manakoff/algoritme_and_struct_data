@@ -1,29 +1,13 @@
 import pytest
 
-@pytest.fixture(params=[
-    "",
-    "()",
-    "[](){}",
-    "{[()]}",
-    "а(б[в]г)д",
-    "((((()))))",
-    "[{()}](){[]}"
-])
+
+@pytest.fixture(
+    params=["", "()", "[](){}", "{[()]}", "а(б[в]г)д", "((((()))))", "[{()}](){[]}"]
+)
 def valid_string(request):
     return request.param
 
 
-@pytest.fixture(params=[
-    "(",
-    ")",
-    "([)]",
-    "(((()))",
-    "(())))",
-    "}{",
-    "{[(])}"
-])
+@pytest.fixture(params=["(", ")", "([)]", "(((()))", "(())))", "}{", "{[(])}"])
 def invalid_string(request):
     return request.param
-
-
-

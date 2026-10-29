@@ -25,11 +25,11 @@ def heapify(arr: List[Num], heap_size: int, root_index: int) -> None:
 
 def heap_sort(arr: List[Num]) -> None:
     """Пирамидальная сортировка, время O(n*log(n)),
-     память O(1)"""
+    память O(1)"""
 
     n = len(arr)
 
-    for i in range(n//2 - 1, -1, -1):
+    for i in range(n // 2 - 1, -1, -1):
         heapify(arr, n, i)
 
     for i in range(n - 1, 0, -1):
